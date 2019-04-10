@@ -1,0 +1,19 @@
+# mod_rewrite starts here
+
+#RewriteEngine on
+
+# HVIS DET ER EN FOLDER MED SAMME NAVN, IKKE KJØR REGEL, KUN FOR FILENAME
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+# HVIS DET IKKE FINNES EN FIL MED NAVNET, IKKE BRY DEG OM REGEL
+
+#RewrtieCond %{REQUEST_FILENAME}\php -f
+
+# HER VISER VI SIDEN SOM HAR .php EXTENSION
+
+#RewriteRule ^(.*)$ $1.php [NC,L]
+
+#For å gjøre 404.php til errorsiden
+
+#ErrorDocument 404 /404.php
